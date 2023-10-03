@@ -26,7 +26,7 @@ module.exports.verify = (req, res) => {
     .createHmac("SHA256", process.env.KEY_SECRET)
     .update(body.toString())
     .digest("hex");
-
+//match
   if (generated_signature == req.body.response.razorpay_signature) {
     res.send({ code: 200, message: "Signature valid" });
   } else {
